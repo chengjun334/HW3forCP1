@@ -35,11 +35,11 @@ function draw() {
 
   // bounce back
     if (y <= 40) {
-      speedx = speedx * -2
+      speedx = speedx * -4
     }
         
     if ( y > 360) {
-    speedx = speedx *-0.5;
+    speedx = speedx *-0.25;
   }
 
 }
