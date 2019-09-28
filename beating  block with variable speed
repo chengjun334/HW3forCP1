@@ -1,0 +1,45 @@
+var x = 210;
+var y = 290;
+var r = 0;
+var speedx = -3
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(253,236,237);
+  noStroke();
+  
+  // draw puff of smoke
+  // fades darker as it gets closer to 0
+  fill(239,107,102);
+  push();
+  translate(x, y);
+  rotate(r);
+  rect(-10, -10, 20, 20);
+  pop();
+  
+  
+  // draw smokestack
+  fill(107,79,10,200);
+  rect(195, height, 30, -100);
+  // draw second smokestack
+  fill(35,55,20,200);
+  rect(195, 0, 30, 100,);
+
+  y = y + speedx;
+
+  // rotate 0.05 radians, which is about 2.8 degrees
+  r += 0.05
+
+  // bounce back
+    if (y <= 40) {
+      speedx = speedx * -2
+    }
+        
+    if ( y > 360) {
+    speedx = speedx *-0.5;
+  }
+
+}
